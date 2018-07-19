@@ -14,7 +14,7 @@ let countStars = 3;
 const stars = document.querySelector(".stars");
 let lastmoves = document.querySelector(".moves");
 let lastcountStars = document.querySelector(".countStars");
-let lastallSeconds = document.querySelector(".time");
+let lastallSeconds = document.querySelector("allSeconds");
 let scorePanel = document.getElementById("score-panel");
 
 
