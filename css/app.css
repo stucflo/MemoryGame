@@ -73,6 +73,7 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
+    pointer-events: none;
 }
 
 .deck .card.match {
@@ -92,6 +93,13 @@ h1 {
 }
 
 .score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .time {
     margin: 0;
     padding: 0;
     display: inline-block;
