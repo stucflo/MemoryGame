@@ -18,6 +18,23 @@ let lastallSeconds = document.querySelector("allSeconds");
 let scorePanel = document.getElementById("score-panel");
 
 
+//Score Clock
+
+function scoreClock() {
+
+let sec = 0;
+
+function pad(val) {
+    return val > 9 ? val : "0" + val;
+}
+let timer = setInterval(function () {
+    document.getElementById("seconds").innerHTML = pad(++sec % 60);
+    document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+}, 1000);
+
+}
+
+
 //initGameialize the game 
 function initGame() {
 const shuffeledCards = shuffle(cards);
@@ -33,7 +50,7 @@ click(card);
  }
 }
 
-//Set clock
+//Set Modal clock
 let timerVar = setInterval(clockTimer, 1000);
 let allSeconds = 0;
 
@@ -63,7 +80,7 @@ function sreset() {
   
 //Click Card
 function click(card) {
-  
+
 //Card Click Event
 card.addEventListener("click", function (){
 const currentCard = this;
@@ -120,7 +137,6 @@ openedCards.push(this);
 function isOver() {
 if(matchedCards.length === cards.length) {
 alert(` You Won! Do You Wish To Play Again? You Have ${countStars} stars . It took you ${moves} moves. Your time in seconds was ${allSeconds}` );
- clearInterval(timerVar); 
 }
 }
 
@@ -152,7 +168,7 @@ function rating() {
                                     <li><i class="fa fa-star"></i></li>`;
   }
 }
-
+scoreClock();
 
 
 
@@ -167,6 +183,11 @@ restartBtn.addEventListener("click", function(){
   
   // Initialize Game and Reset Cards.
   initGame();
+
+
+
+
+
   
 matchedCards=[];
 moves = 0;
