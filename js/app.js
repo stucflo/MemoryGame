@@ -16,13 +16,12 @@ let lastmoves = document.querySelector(".moves");
 let lastcountStars = document.querySelector(".countStars");
 let lastallSeconds = document.querySelector("allSeconds");
 let scorePanel = document.getElementById("score-panel");
-
+let sec = 0;
 
 //Score Clock
 
 function scoreClock() {
 
-let sec = 0;
 
 function pad(val) {
     return val > 9 ? val : "0" + val;
@@ -44,7 +43,7 @@ const card=document.createElement("li");
 card.classList.add("card");
 card.innerHTML = "<i class= '" + cards[i] + "'</i>";
 cardsContainer.appendChild(card);
-  
+let sec = 0;  
 // Add click event to each card
 click(card);  
  }
@@ -136,7 +135,7 @@ openedCards.push(this);
 // Game Over Message    
 function isOver() {
 if(matchedCards.length === cards.length) {
-alert(` You Won! Do You Wish To Play Again? You Have ${countStars} stars . It took you ${moves} moves. Your time in seconds was ${allSeconds}` );
+alert(` You Won! Do You Wish To Play Again? You Have ${countStars} stars . It took you ${moves} moves. Your time in seconds was ${sec}` );
 }
 }
 
@@ -171,8 +170,6 @@ function rating() {
 scoreClock();
 
 
-
-
 //Restart Game
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", function(){
@@ -182,19 +179,13 @@ restartBtn.addEventListener("click", function(){
   
   
   // Initialize Game and Reset Cards.
-  initGame();
-
-
-
-
-
-  
+  initGame();  
 matchedCards=[];
 moves = 0;
+sec = 0;
 movesContainer.innerHTML = moves; 
 starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>`;
-
 });
 
 
@@ -216,4 +207,3 @@ function shuffle(array) {
 
     return array;
 }
-
