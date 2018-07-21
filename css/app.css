@@ -99,7 +99,14 @@ h1 {
     margin: 0 5px 0 0;
 }
 
-.score-panel .time {
+.score-panel .minutes {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .seconds {
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -115,3 +122,4 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
